@@ -4,7 +4,7 @@ export default class Display extends Component {
     render() {
         return (
             <div>
-                <h2>{this.props.name}</h2>
+                <h2 className='h2'>{this.props.name}</h2>
             </div>
         )
     }

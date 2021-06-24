@@ -6,8 +6,8 @@ export default class Display extends Component {
     render() {
         return (
             <div>
-                <h2 style={h2Styles}>{this.props.name}</h2>
-            </div>
+                <button onClick={() => alert('Clicked!')}>ClickMe</button>
+            </div >
         )
     }
 }

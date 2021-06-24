@@ -1,12 +1,17 @@
-import React, { useState } from 'react'
+import React, { Component } from 'react'
+import './App.css';
 
-const App = () => {
- const [name, setName] = useState ('React Tutorials');
-  return (
-    <div>
-      <h1>Hello {name}</h1>
-    </div>
-  )
+export default class App extends Component {
+  state = {
+    name: 'ReactApp'
+  }
+  render() {
+    return (
+      <div>
+        <center>
+          <h1>Hello {this.state.name}</h1>
+        </center>
+      </div>
+    )
+  }
 }
-
-export default App

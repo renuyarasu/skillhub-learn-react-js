@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 const App = () => {
-  const [counter, setCounter] = useState(0);
-  useEffect(() => console.log(counter), [counter])
+
+  const [user, setUser] = useState('');
+  const handler = (e) => {
+    setUser(e.target.value);
+  }
   return (
     <div>
       <center>
-        <h2>You clicked {counter} times.</h2>
-        <button onClick={() => setCounter(counter + 1)}>+1</button>
+        <input type='text' placeholder='user name' value={user} name='user' onChange={handler} /> <br /><br />
+        {user}
       </center>
     </div>
   )

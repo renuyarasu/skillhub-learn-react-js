@@ -2,13 +2,13 @@ import './App.css';
 import React from 'react'
 
 const App = () => {
-  const colors = ['White', 'Yellow', 'Blue', 'Red', 'Green', 'Black', 'Brown'];
-  const filterColor = colors.filter(color => color.includes('B'));
+  const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
+  const above5 = numbers.filter(item => item > 5)
 
   return (
     <div>
       <h2>colors</h2>
-      {filterColor.map(item => <li key={item}>{item}</li>)}
+      {above5.map(item => <li key={item}>{item}</li>)}
     </div>
   )
 }

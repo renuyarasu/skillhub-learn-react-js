@@ -1,32 +1,12 @@
 import './App.css';
-
-import React, { useState } from 'react'
+import React from 'react'
 
 const App = () => {
-  const [data, setData] = useState({
-    username: '',
-    password: '',
-  })
-  const { username, password } = data;
-
-  const onChange = (e) => {
-    setData({ ...data, [e.target.name]: [e.target.value] })
-  }
-
-  const submitHandler = (e) => {
-    e.preventDefault();
-    console.log(data);
-  }
+  const colors = ['White', 'Yellow', 'Blue', 'Red', 'Green', 'Black', 'Brown']
   return (
     <div>
-      <h2>Sumit Form</h2>
-      <form onSubmit={submitHandler}>
-        <input type='text' name='username' placeholder='username' value={username} onChange={onChange} />
-        <br /><br /><input type='password' name='password' placeholder='password' value={password} onChange={onChange} />
-        <br /><br />
-        <input type='submit' name='submit' />
-      </form>
-
+      <h2>Colors</h2>
+      {colors.map((value, index) => <li key={index}>{value}</li>)}
     </div>
   )
 }

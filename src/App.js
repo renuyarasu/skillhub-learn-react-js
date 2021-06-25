@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 
 const App = () => {
-  const [name, setName] = useState('React App!')
+  const [counter, setCounter] = useState(0);
   return (
     <div>
       <center>
-        <h2>{name}</h2>
-        <button onClick={() => setName('Hello React App!')}>Clicked</button>
+        <h2>{counter}</h2>
+        <button onClick={() => setCounter(counter+1)}>Clicked</button>
       </center>
     </div>
   )

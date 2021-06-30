@@ -7,3 +7,6 @@ div#root{
   margin: 0 auto;
   text-align: left;
 }
+input{
+  margin-bottom: 10px;
+}

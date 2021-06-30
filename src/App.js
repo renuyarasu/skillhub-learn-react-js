@@ -4,11 +4,9 @@ import React, { useState } from 'react'
 const App = () => {
   const [data, setData] = useState({
     username: '',
-    email: '',
     password: '',
-    confirmPassword: '',
   })
-  const { username, email, password, confirmPassword } = data;
+  const { username, password } = data;
 
   const changeHandler = e => {
     setData({ ...data, [e.target.name]: [e.target.value] })
@@ -23,9 +21,7 @@ const App = () => {
       <h1>Contact Form</h1>
       <form onSubmit={submitHandler}>
         <input type='username' name='username' placeholder='username' onChange={changeHandler} /> <br /><br />
-        <input type='email' name='email' placeholder='email' onChange={changeHandler} /> <br /><br />
-        <input type='password' name='password' placeholder='password' onChange={changeHandler} /> <br /><br />
-        <input type='password' name='confirmPassword' placeholder='confirmPassword' onChange={changeHandler} /> <br /><br />
+        <input type='password' name='password' placeholder='password' onChange={changeHandler} /> <br />
         <br />
         <input type='submit' value='submit' />
       </form>

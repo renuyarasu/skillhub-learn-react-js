@@ -7,3 +7,8 @@ div#root {
   margin: 0 auto;
   text-align: left;
 }
+h1{
+  color: crimson;
+  font-size: 3rem;
+  font-weight: 700;
+}

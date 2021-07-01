@@ -13,9 +13,9 @@ const App = () => {
   return (
     <div>
       <h1>GET API Data Using Axios</h1>
-      {data.map(item => <li key={item.id}>{item.title}</li>)}
+      {data.map(item => <li style={{ textTransform: 'capitalize', letterSpacing: '0.15rem' }} key={item.id}>{item.title}</li>)}
     </div>
   )
 }
 
-export default App
+export default App;

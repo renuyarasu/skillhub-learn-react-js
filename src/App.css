@@ -3,48 +3,7 @@
   font-family: "Poppins", sans-serif;
 }
 div#root {
-  width: 400px;
+  width: 800px;
   margin: 0 auto;
   text-align: left;
-}
-input {
-  color: white;
-  width: 99%;
-  height: 16%;
-  font-size: 6vmin;
-  border-color: black;
-  margin-bottom: 10px;
-}
-.button {
-  color: white;
-  width: 20%;
-  height: 16%;
-  font-size: 6vmin;
-  border-color: black;
-}
-
-.button:focus {
-  outline: 0px;
-}
-
-.button:active {
-  opacity: 0.5;
-}
-
-.blackbutton {
-  background-color: #434343;
-}
-
-.graybutton {
-  background-color: #5d5e5e;
-}
-
-.orangebutton {
-  background-color: #f2a23c;
-}
-
-.largebutton {
-  width: 50%;
-  text-align: left;
-  padding-left: 12%;
 }

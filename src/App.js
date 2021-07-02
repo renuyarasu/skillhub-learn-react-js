@@ -1,24 +1,17 @@
-
-// useHistory Hook
 import './App.css';
-import React from 'react'
-import Nav from './components/Nav';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Home from './components/Home';
-import About from './components/About';
-import Dashboard from './components/Dashboard';
+import React from 'react';
+import FrontEndDevelopment from './FrontEndDevelopment.jpg';
+import BackEndDeveloper from './BackEndDeveloper.jpg';
+import FullStackDeveloper from './FullStackDeveloper.jpg';
+
 
 const App = () => {
   return (
     <div>
-      <Router>
-            <Nav />
-        <Switch>
-          <Route path='/home' exact component={Home} />
-          <Route path='/about' component={About} />
-          <Route path='/dashboard/:name' component={Dashboard} />
-        </Switch>
-      </Router>
+      <h1>Import Images</h1>
+      <img src={FrontEndDevelopment} height='250' width='auto' />
+      <img src={BackEndDeveloper} height='250' width='auto' />
+      <img src={FullStackDeveloper} height='250' width='auto' />
     </div>
   )
 }

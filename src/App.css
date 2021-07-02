@@ -9,12 +9,13 @@
 div#root {
   width: 800px;
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
 }
 h1 {
   color: #fff;
   font-size: 3rem;
   font-weight: 700;
+  margin-bottom: 1rem;
 }
 ul {
   list-style: none;
@@ -29,7 +30,7 @@ a {
   color: #20574f;
   font-weight: 700;
 }
-a:hover{
+a:hover {
   color: #fff;
 }
 button {

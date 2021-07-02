@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 * {
   font-family: "Poppins", sans-serif;
-  background-color: cornsilk;
+  background-color: #5ca399;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -12,7 +12,7 @@ div#root {
   text-align: left;
 }
 h1 {
-  color: crimson;
+  color: #fff;
   font-size: 3rem;
   font-weight: 700;
 }
@@ -24,4 +24,18 @@ li {
   display: inline-block;
   padding: 20px;
   font-weight: 700;
+}
+a {
+  color: #20574f;
+  font-weight: 700;
+}
+a:hover{
+  color: #fff;
+}
+button {
+  border: 1px solid #20574f;
+  padding: 10px;
+  background-color: #fff;
+  cursor: pointer;
+  margin-top: 20px;
 }

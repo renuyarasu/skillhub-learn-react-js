@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
-import { Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const Home = () => {
-    const [auth, setAuth] = useState(false);
-    if (auth) {
-        return <Redirect to='/dashboard' />
-    }
+    let history = useHistory();
+
     return (
         <div>
             <h1>Home Page</h1>
-            <button onClick={() => setAuth(true)}>Login</button>
+            <button onClick={() => history.push('/dashboard')}>Dashboard</button>
         </div>
     )
 }

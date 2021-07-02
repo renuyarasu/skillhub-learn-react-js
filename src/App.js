@@ -1,5 +1,5 @@
 
-// Use Redirect Component
+// useHistory Hook
 import './App.css';
 import React from 'react'
 import Nav from './components/Nav';

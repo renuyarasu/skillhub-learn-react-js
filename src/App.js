@@ -1,5 +1,5 @@
 
-// Use React Router
+// Use Redirect Component
 import './App.css';
 import React from 'react'
 import Nav from './components/Nav';
@@ -14,9 +14,9 @@ const App = () => {
       <Router>
             <Nav />
         <Switch>
-          <Route path='/Home' exact component={Home} />
-          <Route path='/About' component={About} />
-          <Route path='/Dashboard' component={Dashboard} />
+          <Route path='/home' exact component={Home} />
+          <Route path='/about' component={About} />
+          <Route path='/dashboard' component={Dashboard} />
         </Switch>
       </Router>
     </div>

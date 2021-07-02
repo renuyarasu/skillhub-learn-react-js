@@ -1,21 +1,27 @@
+
+// Use React Router
 import './App.css';
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React from 'react'
+import Nav from './components/Nav';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './components/Home';
+import About from './components/About';
+import Dashboard from './components/Dashboard';
 
 const App = () => {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    axios.get('https://jsonplaceholder.typicode.com/todos').then(
-      response => setData(response.data)
-    )
-  }, [])
-
   return (
     <div>
-      <h1>GET API Data Using Axios</h1>
-      {data.map(item => <li style={{ textTransform: 'capitalize', letterSpacing: '0.15rem' }} key={item.id}>{item.title}</li>)}
+      <Router>
+            <Nav />
+        <Switch>
+          <Route path='/Home' exact component={Home} />
+          <Route path='/About' component={About} />
+          <Route path='/Dashboard' component={Dashboard} />
+        </Switch>
+      </Router>
     </div>
   )
 }
 
-export default App;
+export default App
+

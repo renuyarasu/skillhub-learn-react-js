@@ -7,5 +7,4 @@ const Component_B = () => {
         </div>
     )
 }
-
 export default Component_B

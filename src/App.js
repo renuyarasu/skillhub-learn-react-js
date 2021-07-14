@@ -1,17 +1,12 @@
-import './App.css';
 import React from 'react';
-import Component_C from './components/Component_C';
-
-export const UserContext = React.createContext();
+import './App.css';
 
 const App = () => {
-  return (
-    <div>
-      <UserContext.Provider value='Telugu SkillHub'>
-        <Component_C />
-      </UserContext.Provider>
-    </div>
-  )
+    return (
+        <div>
+            <h1>Hello</h1>
+        </div>
+    )
 }
 
 export default App

@@ -1,4 +1,4 @@
-const count = 0;
+const count = 10;
 
 export default function reducer(state = count, action) {
     const { type, payload } = action;

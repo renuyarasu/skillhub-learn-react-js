@@ -1,12 +1,15 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import './App.css';
 
-const App = () => {
+const App = ({local_variable}) => {
     return (
         <div>
-            <h1>Hello</h1>
+            <h1>{local_variable}</h1>
         </div>
     )
 }
-
-export default App
+const mapStateToProps = state => ({
+    local_variable: state,
+})
+export default connect(mapStateToProps)(App);

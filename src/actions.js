@@ -1,9 +1,10 @@
-export const IncAction = () => async dispatch => {
+export const incAction = (value) => async dispatch => {
     dispatch({
-        type: 'INCREMENT'
+        type: 'INCREMENT',
+        payload: value
     })
 }
-export const DecAction = () => async dispatch => {
+export const decAction = () => async dispatch => {
     dispatch({
         type: 'DECREMENT'
     })

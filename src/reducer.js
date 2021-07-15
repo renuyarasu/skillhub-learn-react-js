@@ -5,7 +5,7 @@ export default function reducer(state = count, action) {
 
     switch (type) {
         case 'INCREMENT':
-            return state + 1;
+            return state + payload;
         case 'DECREMENT':
             return state - 1;
         default:

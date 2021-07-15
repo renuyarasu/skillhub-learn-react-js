@@ -1,15 +1,16 @@
 import './App.css';
 import React, { Component } from 'react';
+import Display from './Display';
 
 export default class App extends Component {
-    state ={
+    state = {
         name: 'Hello React'
     }
     render() {
         return (
             <div>
-                <h1>{this.state.name}</h1>
-                <button onClick={() => this.setState({name: 'Learning React JS'})}>Change Name</button>
+                <Display data={this.state.name} />
+                <button onClick={() => this.setState({ name: 'Learning React JS' })}>Change Name</button>
             </div>
         )
     }

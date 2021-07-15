@@ -1,19 +1,16 @@
-import React from 'react';
-import { connect } from 'react-redux';
 import './App.css';
-import { incAction, decAction } from './actions';
+import React, { Component } from 'react';
 
-const App = ({ local_variable, incAction, decAction }) => {
-    return (
-        <div>
-            <h1>{local_variable}</h1>
-            <button onClick={() => incAction(10)}>Increment</button>
-            <button onClick={decAction}>Decrement</button>
-        </div>
-    )
+export default class App extends Component {
+    state ={
+        name: 'Hello React'
+    }
+    render() {
+        return (
+            <div>
+                <h1>{this.state.name}</h1>
+                <button onClick={() => this.setState({name: 'Learning React JS'})}>Change Name</button>
+            </div>
+        )
+    }
 }
-const mapStateToProps = state => ({
-    local_variable: state,
-}
-)
-export default connect(mapStateToProps, { incAction, decAction })(App);

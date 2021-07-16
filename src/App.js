@@ -1,52 +1,26 @@
 import './App.css';
-import React from 'react'
+import React, { Component } from 'react'
+import Display from './Display';
+import { link } from 'fs';
 
-class Container extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            show: true,
-            count: 0
-        };
+export default class App extends Component {
+    state = {
+        name: 'React',
+        products: []
     }
-    delHeader = () => {
-        this.setState({ show: false });
-    }
-
     componentDidMount() {
-        console.log('componentDidMount Method!');
+        fetch('https://jsonplaceholder.typicode.com/todos').then(
+            res => res.json()
+        ).then(data => this.setState({ products: data })).catch(err => console.log(err))
     }
-    componentDidUpdate() {
-        console.log('componentDidUpdate Method!');
-    }
-
     render() {
-        let myheader;
-        if (this.state.show) {
-            myheader = <Child />;
-        };
         return (
             <div>
-                <center>
-                    {myheader}
-                    <button type='button' onClick={this.delHeader}>Delete Header</button><hr /><br /><hr />
-                    <h3>Count: {this.state.count}</h3>
-                    <button type='button' onClick={() => this.setState({ count: this.state.count + 1 })}>Increment</button>
-                </center>
+                {/* <h1>Hello {this.state.name}</h1> */}
+                {/* <Display data={this.state.name} /> */}
+                {this.state.products.map((product) => <li key={product.id}>{product.title}</li>)}
+                <button onClick={() => this.setState({ name: 'React Learning' })}>Change</button>
             </div>
         )
     }
 }
-class Child extends React.Component {
-    componentWillUnmount() {
-        console.log('componentWillUnmount Method!');
-    }
-    render() {
-        return (
-            <h1>Hello React</h1>
-        );
-    }
-}
-
-export default Container;
-

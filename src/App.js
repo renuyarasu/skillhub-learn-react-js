@@ -1,18 +1,20 @@
 import './App.css';
-import React, { useState } from 'react'
-import Data from './city.json';
+import React from 'react'
+import { useRef } from 'react';
 
 const App = () => {
-    const [search, setSearch] = useState('');
+    const data = useRef(null);
+    const submitHandler = e => {
+        e.preventDefault();
+        console.log(data.current.value); // Hello
+    }
     return (
         <div>
-            <h1>Enter your City Name:</h1>
-            <input type="text" value={search} onChange={(e) => setSearch(e.target.value)} /> <br /><br />
-            {Data.filter(city => city.name.toLowerCase().includes(search.toLowerCase())).map(city => {
-                return <div className='cities'>
-                    {city.name}
-                </div>
-            })}
+            <h1>Contact Form</h1>
+            <form onSubmit={submitHandler}>
+                <input ref={data} type="text" placeholder="Enter Name"/>
+                <button>Submit</button>
+            </form>
         </div>
     )
 }

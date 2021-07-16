@@ -1,25 +1,42 @@
 import './App.css';
-import React, { Component } from 'react'
-import Display from './Display';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import React from 'react'
+import { Table } from 'react-bootstrap';
 
-export default class App extends Component {
-    state = {
-        name: 'React',
-        products: []
-    }
-    componentDidMount() {
-        fetch('https://jsonplaceholder.typicode.com/todos').then(
-            res => res.json()
-        ).then(data => this.setState({ products: data })).catch(err => console.log(err))
-    }
-    render() {
-        return (
-            <div>
-                {/* <h1>Hello {this.state.name}</h1> */}
-                <Display data={this.state.products} />
-                {/* {this.state.products.map((product) => <li key={product.id}>{product.title}</li>)} */}
-                <button onClick={() => this.setState({ name: 'React Learning' })}>Change</button>
-            </div>
-        )
-    }
+const App = () => {
+    return (
+        <div>
+            <Table striped bordered hover>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Username</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Mark</td>
+                        <td>Otto</td>
+                        <td>@mdo</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jacob</td>
+                        <td>Thornton</td>
+                        <td>@fat</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td colSpan="2">Larry the Bird</td>
+                        <td>@twitter</td>
+                    </tr>
+                </tbody>
+            </Table>
+        </div>
+    )
 }
+
+export default App

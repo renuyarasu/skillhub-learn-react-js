@@ -1,7 +1,6 @@
 import './App.css';
 import React, { Component } from 'react'
 import Display from './Display';
-import { link } from 'fs';
 
 export default class App extends Component {
     state = {
@@ -17,8 +16,8 @@ export default class App extends Component {
         return (
             <div>
                 {/* <h1>Hello {this.state.name}</h1> */}
-                {/* <Display data={this.state.name} /> */}
-                {this.state.products.map((product) => <li key={product.id}>{product.title}</li>)}
+                <Display data={this.state.products} />
+                {/* {this.state.products.map((product) => <li key={product.id}>{product.title}</li>)} */}
                 <button onClick={() => this.setState({ name: 'React Learning' })}>Change</button>
             </div>
         )

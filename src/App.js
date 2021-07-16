@@ -1,24 +1,27 @@
 import './App.css';
-import React from 'react'
-import { useRef } from 'react';
-import { useEffect } from 'react';
+import React, { useReducer } from 'react'
 
-const App = () => {
-    const data = useRef(null);
-    const submitHandler = e => {
-        e.preventDefault();
-        console.log(data.current.value); // Hello
+const initialState = { count: 0 };
+
+function reducer(state, action) {
+    switch (action.type) {
+        case 'decrement':
+            return { count: state.count - 1 }
+        case 'increment':
+            return { count: state.count + 1 }
+        default:
+            throw new Error();
     }
-    useEffect(() => {
-        data.current.focus();
-    })
+}
+
+function App() {
+    const [state, dispatch] = useReducer(reducer, initialState);
     return (
         <div>
-            <h1>Contact Form</h1>
-            <form onSubmit={submitHandler}>
-                <input ref={data} type="text" placeholder="Enter Name" />
-                <button>Submit</button>
-            </form>
+            <strong>Count</strong>: {state.count} <br />
+            <button onClick={() => dispatch({ type: 'decrement' })}> - </button>
+            <button onClick={() => dispatch({ type: 'increment' })}> + </button>
+
         </div>
     )
 }
